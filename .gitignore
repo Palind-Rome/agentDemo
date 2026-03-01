@@ -1,0 +1,9 @@
+# 忽略 .env 文件（里面有 API 密钥，不能提交到 git）
+.env
+
+# Python 缓存
+__pycache__/
+*.pyc
+
+# 虚拟环境
+.venv/
