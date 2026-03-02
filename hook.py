@@ -100,15 +100,3 @@ def create_audit_plugin():
         hooks.register("tool.execute.after", on_tool_after)
 
     return register
-
-
-def register_plugin(hook_manager: HookManager, plugin: dict):
-    """
-    注册一个插件的所有 hook
-
-    插件是一个 dict: { "hook名称": 回调函数, ... }
-    """
-    for hook_name, callback in plugin.items():
-        if hook_name.startswith("_"):
-            continue  # 跳过私有字段
-        hook_manager.register(hook_name, callback)
